@@ -1,3 +1,1 @@
-# SoftEng-Catalogue
-
-Hello world!
+Hello World!
