@@ -7,6 +7,7 @@ class HomePage extends Component
         return(
             <div className='homepage'>
                 <h1>Hello World!</h1>
+                <p>this is the landing page...</p>
             </div>
         )
     }
