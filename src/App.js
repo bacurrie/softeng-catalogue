@@ -1,6 +1,8 @@
 import './App.css';
 import { BrowserRouter, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import CollectionIndex from "./pages/CollectionIndex";
+import DetailPage from "./pages/DetailPage";
 import Navi from "./components/Navi";
 
 function App() 
@@ -16,7 +18,7 @@ function App()
           </Route>
           
           <Route path='/index'>
-            <p>index</p>
+            <CollectionIndex/>
           </Route>
 
           <Route path='/login'>
@@ -24,7 +26,7 @@ function App()
           </Route>
 
           <Route path='/detail'>
-            <p>detail</p>
+            <DetailPage/>
           </Route>
           
         </BrowserRouter>
