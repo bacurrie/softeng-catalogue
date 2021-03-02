@@ -4,6 +4,8 @@ import HomePage from "./pages/HomePage";
 import CollectionIndex from "./pages/CollectionIndex";
 import DetailPage from "./pages/DetailPage";
 import Navi from "./components/Navi";
+import Data from "./data/data.json";
+import Debug from './pages/Debug';
 
 function App() 
 {
@@ -28,7 +30,15 @@ function App()
           <Route path='/detail'>
             <DetailPage/>
           </Route>
+
+          <Route path='/debug'>
+            <Debug/>
+          </Route>
           
+          {Data.map(data => (
+            <Route path={data.id}><DetailPage data={data}/></Route>
+          ))}
+
         </BrowserRouter>
       </header>
     </div>

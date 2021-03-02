@@ -17,6 +17,9 @@ class Navi extends Component
                     <li>
                         <Link to='/login'>Log In</Link>
                     </li>
+                    <li>
+                        <Link to='/debug'>Debug</Link>
+                    </li>
                 </ul>
             </nav>
         )
