@@ -7,8 +7,7 @@ class Image extends Component
     {
         return(
             <div className='image'>
-                <h1>Obj name</h1>
-                <img src={test}></img>
+                <img src={test} alt="stuff"></img>
             </div>
         )
     }
