@@ -1,26 +1,48 @@
 import React, { Component } from 'react'
-
+import Form from "@rjsf/core"
+import DetailPage from './DetailPage';
 class Debug extends Component {
     
     constructor(props){
         super(props);
 
-        this.state = {count: 0};
+        this.state = {
+                    text: "clicks",
+                    data: {"name": "Chair", "desc": "comfortable", "imagedesc": "a chair"}
+                    };
     }    
 
-    handleClick() {
-        this.setState({
-            count: this.state.count + 1
-        }, function() {
-            console.log('whoop');
-        });
-    }
+    onSubmit = ({formData}) => this.setState({text: formData.test, data: formData}, function() {console.log(formData)});
 
     render() {
+        console.log(this.state.data);
+        const schema = {
+                        "title": "a test",
+                        "description": "this is a sample",
+                        "type": "object",
+                        "properties": {
+
+                            "name": {
+                                type: "string",
+                                title: "name"
+                            },
+                            "desc": {
+                                type: "string",
+                                title: "description"
+                            },
+                            "imagedesc": {
+                                type: "string",
+                                title: "image description"
+                            }
+                        }
+                    };
+        
         return (
             <div className="clicker">
-                <h1>clicks: {this.state.count}</h1>
-                <button onClick={this.handleClick.bind(this)}>Click me!</button>
+                <Form schema={schema} onSubmit={this.onSubmit.bind(this)} noValidate>
+                    <button type="submit">Save</button>
+                </Form>
+                <DetailPage data={this.state.data} />
             </div>
 
         );
