@@ -1,51 +1,40 @@
 import React, { Component } from 'react'
-import Form from "@rjsf/core"
-import DetailPage from './DetailPage';
+import DebugDetail from './DebugDetail';
+import DebugForm from './DebugForm';
+import first from '../data/images/chair.png';
 class Debug extends Component {
     
-    constructor(props){
+    constructor(props)
+    {
         super(props);
 
-        this.state = {
-                    text: "clicks",
-                    data: {"name": "Chair", "desc": "comfortable", "imagedesc": "a chair"}
-                    };
-    }    
+        this.state = 
+        {
+            text: "clicks",
+            data: {name: "Chair", desc: "comfortable", imagedesc: "a chair"},
+            isEditable: false
+        };
+    }
+    
+    submitCallback = ({formData}) => {
+        this.setState({data: formData});
+        this.editCallback(false);
+    }
 
-    onSubmit = ({formData}) => this.setState({text: formData.test, data: formData}, function() {console.log(formData)});
+    editCallback = (editBool) => {
+        this.setState({isEditable: editBool});
+    }
 
     render() {
+
         console.log(this.state.data);
-        const schema = {
-                        "title": "a test",
-                        "description": "this is a sample",
-                        "type": "object",
-                        "properties": {
-
-                            "name": {
-                                type: "string",
-                                title: "name"
-                            },
-                            "desc": {
-                                type: "string",
-                                title: "description"
-                            },
-                            "imagedesc": {
-                                type: "string",
-                                title: "image description"
-                            }
-                        }
-                    };
         
-        return (
-            <div className="clicker">
-                <Form schema={schema} onSubmit={this.onSubmit.bind(this)} noValidate>
-                    <button type="submit">Save</button>
-                </Form>
-                <DetailPage data={this.state.data} />
-            </div>
-
-        );
+        const isEditable = this.state.isEditable;
+        if(isEditable){
+            return <DebugForm data={this.state.data} callBack={this.submitCallback} cancel={this.editCallback}/>
+        } else {
+            return <DebugDetail data={this.state.data} callBack={this.editCallback}/>
+        }
     }
 }
 
