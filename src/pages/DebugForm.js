@@ -5,7 +5,7 @@ import DebugDetail from "./DebugDetail";
 import first from '../data/images/chair.png';
 
 
-class DebugForm extends Component 
+class DebugForm extends Component
 {
 
 //TODO callback for debugform
@@ -17,9 +17,9 @@ class DebugForm extends Component
         this.props.cancel(false);
     }
 
-    render() 
+    render()
     {
-        const schema = 
+        const schema =
         {
             "title": "debug",
             "description": "this is a sample",
@@ -45,7 +45,7 @@ class DebugForm extends Component
                 }
             }
         };
-        
+
         return(
             <div className='detail'>
                 <Form schema={schema} formData={this.props.data} onSubmit={this.onSubmit.bind(this)} noValidate>
