@@ -1,0 +1,29 @@
+[
+    {
+        "id": "/1",
+        "name": "Chair",
+        "desc": "comfortable seating for one",
+        "imagedesc": "a chair" 
+    },
+    {
+        "id": "/2",
+        "name": "Couch",
+        "desc": "Plush & stylish upholstery, can sit two or three comfortably",
+        "imagedesc": "a couch" 
+
+    },
+    {
+        "id": "/3",
+        "name": "Coffee Table",
+        "desc": "Usually placed in front of a couch, useful for more than just coffee!",
+        "imagedesc": "a coffee table" 
+
+    },
+    {
+        "id": "/4",
+        "name": "Desk",
+        "desc": "For doing homework and other stuff",
+        "imagedesc": "a desk" 
+
+    }
+]
