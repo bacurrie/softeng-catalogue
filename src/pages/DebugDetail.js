@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-class DebugDetail extends Component 
+class DebugDetail extends Component
 {
 
     constructor(props){
         super(props);
     }
-    
+
     editHandle(){
         this.props.callBack(true);
     }
-    render() 
+    render()
     {
-        
+
         return(
             <div className='detail'>
-                
+
                 <Link to='/index'>return to index</Link>
                 <h2>{this.props.data.name}</h2>
                 <p>{this.props.data.desc}</p>

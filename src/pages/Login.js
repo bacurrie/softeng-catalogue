@@ -24,7 +24,7 @@ function Login({
     // });
 
     const response = await axios.post("login", {
-      userName: name,
+      username: name,
       password: password,
     });
 

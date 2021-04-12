@@ -12,6 +12,7 @@ function HomePage({ user }: { user: any }) {
     message = `Hi ${user}`;
   } else {
     message = "You are not logged in!";
+    // all catalogues
   }
   // setMessage(`Hi ${user.first_name} ${user.last_name}`);
   // setMessage('You are not logged in!');

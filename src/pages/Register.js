@@ -31,7 +31,7 @@ const Register = () => {
     } else {
       setError(false);
       await axios.post("register", {
-        userName: name,
+        username: name,
         password: password,
       });
       setRedirect(true);
