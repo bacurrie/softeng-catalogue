@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory  } from "react-router-dom";
+import rolo from '../data/images/rolo.png';
+import navHeader from '../data/images/navHeader.png';
 
 const Navi = ({
   user,
@@ -29,14 +31,14 @@ const Navi = ({
   //have to show the logout button, redirect to main page
   if (user) {
     links = (
-      <ul className="navbar-nav my-2 my-lg-0 px-2">
+      <ul className="navbar-nav mr-auto">
         <li className="nav-item">
-          <Link to="/" onClick={logout} className="nav-link">
+          <Link to="/" onClick={logout} className="nav-linkout">
             Log out
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/index" className="nav-link">
+          <Link to="/index" className="nav-linkind">
             Index
           </Link>
         </li>
@@ -52,28 +54,31 @@ const Navi = ({
     links = (
       <ul className="navbar-nav my-2 my-lg-0 px-2">
         <li className="nav-item">
-          <Link to="/login" className="nav-link">
+          <Link to="/login" className="nav-linkin" >
             Log In
           </Link>
         </li>
 
         <li className="nav-item">
-          <Link to="/register" className="nav-link">
-            Register
+          <Link to="/register" className="nav-linkreg">
+          Register
           </Link>
         </li>
       </ul>
     );
   }
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-md navbar-light">
       <ul className="navbar-nav mr-auto">
-        <li className="nav-item">
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-        </li>
-      </ul>
+        <a className="navbar-brand" href="/">
+          <div className="logo-image">
+            <img src={rolo} id="rolo">
+              
+            </img>
+          </div>
+        </a>
+       </ul>
+       <ul className="navbar-nav mr-auto"></ul>
       {links}
     </nav>
   );
